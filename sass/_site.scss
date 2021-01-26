@@ -22,6 +22,6 @@
     opacity: 1;
   }
   &.paused {
-    // opacity: .2;
+    filter: invert(1);
   }
 }
