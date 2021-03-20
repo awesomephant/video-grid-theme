@@ -74,6 +74,12 @@ class VideoGridSite extends Timber\Site
 		$context['menu']  = new Timber\Menu();
 		$context['site']  = $this;
 		$context['options'] = get_fields('option');
+		$projectArgs = array(
+			'post_type' => 'project',
+			'post_status' => 'publish',
+		);
+
+		$context['projects'] = Timber::get_posts($projectArgs);
 		return $context;
 	}
 

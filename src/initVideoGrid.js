@@ -20,7 +20,7 @@ function bindHoverEvents(video) {
   })
 }
 
-function initHome() {
+function initVideoGrid() {
   const containers = document.querySelectorAll(".card-video")
   containers.forEach(c => {
     const video = c.querySelector(".video")
@@ -38,4 +38,4 @@ function initHome() {
     })
   })
 }
-export default initHome;
+export default initVideoGrid;

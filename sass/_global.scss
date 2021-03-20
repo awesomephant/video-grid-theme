@@ -3,9 +3,10 @@
   margin: 0;
   padding: 0;
   border: 0;
-  line-height: 1;
+  line-height: inherit;
   font-size: 100%;
   font-family: inherit;
+  font-weight: inherit;
   list-style: none;
 }
 
@@ -19,12 +20,23 @@ html {
 }
 body {
   background: black;
+  font-weight: 300;
+  &.home {
+    background: $lightgray;
+    padding: $padding;
+  }
 }
 a {
   text-decoration: none;
   color: inherit;
 }
 
-#wpadminbar {
-  display: none;
+::selection {
+  background: black;
+  color: white;
+}
+
+:root {
+  scrollbar-width: auto;
+  scrollbar-color: $black $lightgray;
 }

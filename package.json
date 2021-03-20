@@ -3,21 +3,24 @@
   "private": true,
   "author": "Max Kohler",
   "scripts": {
-    "start": "gulp",
-    "build": "gulp build",
-    "deploy": "gulp deploy"
+    "build:webpack": "webpack --mode production",
+    "build:sass": "sass ./sass/style.scss ./theme/style.css --no-source-map",
+    "watch:webpack": "webpack --watch --mode development",
+    "watch:sass": "sass ./sass/style.scss ./theme/style.css --watch --no-source-map",
+    "watch:gulp": "gulp bs",
+    "start": "cross-env NODE_ENV=dev run-p watch:*",
+    "build": "cross-env NODE_ENV=production run-s build:*"
   },
   "devDependencies": {},
   "dependencies": {
     "browser-sync": "^2.26.12",
+    "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
-    "gulp-sass": "^4.1.0",
-    "gulp-util": "^3.0.8",
-    "lodash": "^4.17.20",
+    "npm-run-all": "^4.1.5",
     "sass": "^1.30.0",
-    "vinyl-named": "^1.1.0",
+    "webpack": "^5.27.0",
+    "webpack-cli": "^4.5.0",
     "webpack-stream": "^5.2.1"
   }
 }

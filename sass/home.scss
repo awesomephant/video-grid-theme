@@ -1,0 +1,56 @@
+.home__copy {
+  @extend %bodycopy;
+  display: grid;
+  @include bp(m) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.project {
+  padding-bottom: $padding * 2;
+  margin-bottom: $padding * 2.5;
+  border-bottom: 1px dashed $black;
+}
+
+.project__gallery {
+  margin-bottom: $padding;
+  ul {
+    display: flex;
+  }
+}
+.project__copy {
+  @extend %bodycopy;
+  font-size: var(--ms--1);
+  letter-spacing: 0.02em;
+  max-width: 38em;
+}
+.gallery__item {
+  margin-right: 1px;
+  flex-grow: 1;
+  &:last-child {
+    margin-right: 0;
+  }
+  .media {
+    width: 100%;
+    display: block;
+  }
+}
+
+.home__cv {
+  ol {
+    margin-bottom: 1em;
+  }
+  li {
+    display: flex;
+  }
+  h3 {
+      text-indent: 6.5em;
+  }
+  .years {
+      width: 6em;
+      font-style: normal;
+      text-align: right;
+      margin-right: .5em;
+      font-feature-settings: "tnum" 1;
+  }
+}

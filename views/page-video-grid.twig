@@ -1,0 +1,10 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<section class="videos" id="video-grid">
+	{% for video in options.videos %}
+	{% include '/partial/video.twig' with {file: video} %}
+	{% endfor %}
+</section>
+{% endblock %}

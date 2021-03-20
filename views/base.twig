@@ -16,9 +16,9 @@
 	</section>
 
 	{% block footer %}
-	{{ function('wp_footer') }}
-	<script src="{{theme.link}}/dist/dist.js"></script>
 	{% endblock %}
+	{{ function('wp_footer') }}
+	<script src="{{theme.link}}/dist/dist.js?v={{theme.version}}"></script>
 </body>
 
 </html>

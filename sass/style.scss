@@ -1,8 +1,8 @@
 /*!
-Theme Name: Video Grid Website
+Theme Name: William Jacobson 2021
 Author: Max Kohler
 Author URI: http://maxkoehler.com/
-Description: Custom theme for the yet-untitled Video Grid Website. Required plugins: Advanced Custom Fields Pro, Timber Library
+Description: Custom theme for William Jacobson. Includes the previous untitled Video Grid Website. Required plugins: Advanced Custom Fields Pro, Timber Library
 Version: 1.0
 License: All rights reserved
 */
@@ -11,3 +11,5 @@ License: All rights reserved
 @import "vars";
 @import "global";
 @import "site";
+@import "home";
+@import "video-grid";

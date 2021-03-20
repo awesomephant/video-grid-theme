@@ -23,6 +23,44 @@
 }
 
 $fast: 100ms;
+$lightgray: rgb(220, 220, 220);
+$black: rgb(14, 14, 14);
+$sans: "neue-haas-unica", sans-serif;
+$padding: 1rem;
+
+%bodycopy {
+  text-rendering: optimizeLegibility;
+  font-family: $sans;
+  letter-spacing: 0.0085em;
+  word-spacing: 0.005em;
+  line-height: 1.2;
+  font-size: var(--ms-0);
+  hyphens: auto;
+  @include bp(m) {
+    hyphens: none;
+  }
+  h1, h3 {
+    text-transform: uppercase;
+    letter-spacing: .02em;
+    margin-top: .75em;
+    margin-bottom: .125em;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
 
 :root {
+  --ratio: 1.2;
+  --ms-0: clamp(1rem, calc(1.3vw + 0.2rem), 1.4rem);
+  --ms--1: calc(var(--ms-0) / var(--ratio));
+  --ms-1: calc(var(--ms-0) * var(--ratio));
 }

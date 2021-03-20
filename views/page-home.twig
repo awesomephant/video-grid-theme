@@ -1,0 +1,52 @@
+{% extends "base.twig" %}
+
+{% block header %}
+<header class="header">
+    <h1 class="header__title">{{post.title}}</h1>
+    <div class="header__copy">{{post.meta("bio")}}</div>
+</header>
+{% endblock %}
+
+{% block content %}
+{% for p in projects %}
+<article class="project">
+    <section class="project__gallery">
+        <ul>
+            {% for item in p.meta("gallery")%}
+            <li class="gallery__item">
+                {% if item.type == "video" %}
+                    <video class="media" src="{{item.url}}" autoplay muted loop playsinline></video>
+                {% else %}
+                    {% include "partial/picture.twig" with {image: TimberImage(item.ID)} %}
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section class="project__copy">
+        {{p.content}}
+    </section>
+</article>
+{% endfor %}
+<article class="home__copy">
+    <section class="home__cv">
+        {% for section in post.meta("cv")%}
+        <h3>{{section.title}}</h3>
+        <ol>
+            {% for i in section.items %}
+            <li>
+                <em class="years">{{i.years}}</em>
+                <span class="description">
+                    {{i.description}}
+                </span>
+            </li>
+            {% endfor %}
+        </ol>
+        {% endfor %}
+    </section>
+    <section class="home__text">{{post.content}}</section>
+</article>
+{% endblock %}
+{% block footer %}
+{% include "footer.twig"%}
+{% endblock %}
