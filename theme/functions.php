@@ -32,9 +32,9 @@ Timber::$dirname = array('../views');
 function remove_wp_css()
 {
 	wp_deregister_style('wp-block-library');
+	// wp_deregister_style('dashicons');
 	wp_deregister_script('jquery');
 	wp_deregister_script('devicepx');
-	wp_deregister_style('dashicons');
 }
 
 Timber::$autoescape = false;

@@ -22,11 +22,31 @@
   }
 }
 
+@mixin baselineGrid($lineHeight, $offset, $c) {
+	background-image: linear-gradient(
+		to bottom,
+		transparent 0px,
+		transparent #{$lineHeight},
+		$c calc(#{$lineHeight})
+	);
+	background-size: 100vw calc(#{$lineHeight} * 2);
+	background-repeat: repeat;
+	background-position: 0 $offset;
+}
+
 $fast: 100ms;
 $lightgray: rgb(220, 220, 220);
 $black: rgb(14, 14, 14);
 $sans: "neue-haas-unica", sans-serif;
-$padding: 1rem;
+$padding: var(--ms-0);
+$dashBorder: repeating-linear-gradient(to right, black 0, black 1em, transparent 1em, transparent 1.55em) 100;
+
+:root {
+  --ratio: 1.2;
+  --ms-0: clamp(.9rem, calc(1.3vw + 0.2rem), 1.4rem);
+  --ms--1: calc(var(--ms-0) / var(--ratio));
+  --ms-1: calc(var(--ms-0) * var(--ratio));
+}
 
 %bodycopy {
   text-rendering: optimizeLegibility;
@@ -42,8 +62,7 @@ $padding: 1rem;
   h1, h3 {
     text-transform: uppercase;
     letter-spacing: .02em;
-    margin-top: .75em;
-    margin-bottom: .125em;
+    margin-top: .6em;
     &:first-child {
       margin-top: 0;
     }
@@ -56,11 +75,4 @@ $padding: 1rem;
       text-decoration: none;
     }
   }
-}
-
-:root {
-  --ratio: 1.2;
-  --ms-0: clamp(1rem, calc(1.3vw + 0.2rem), 1.4rem);
-  --ms--1: calc(var(--ms-0) / var(--ratio));
-  --ms-1: calc(var(--ms-0) * var(--ratio));
 }

@@ -7,9 +7,10 @@
 }
 
 .project {
-  padding-bottom: $padding * 2;
-  margin-bottom: $padding * 2.5;
-  border-bottom: 1px dashed $black;
+  padding-bottom: $padding;
+  margin-bottom: calc(#{$padding} * 1.2); // Compensation for type spacing
+  border-bottom: 3px solid $black;
+  border-image: $dashBorder;
 }
 
 .project__gallery {
@@ -38,7 +39,7 @@
 
 .home__cv {
   ol {
-    margin-bottom: 1em;
+    margin-bottom: 1.8em;
   }
   li {
     display: flex;

@@ -21,8 +21,9 @@ html {
 body {
   background: black;
   font-weight: 300;
+  
   &.home {
-    background: $lightgray;
+    background-color: $lightgray;
     padding: $padding;
   }
 }
