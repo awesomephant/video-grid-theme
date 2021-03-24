@@ -9,18 +9,22 @@
 .project {
   padding-bottom: $padding;
   margin-bottom: calc(#{$padding} * 1.2); // Compensation for type spacing
-  border-bottom: $borderWidth solid $black;
-  border-image: $dashBorder;
+  border-bottom: 2px dashed black;
+  @include bp(s) {
+    border-bottom: $borderWidth dashed black;
+    border-image: $dashBorder;
+  }
 }
 
 .project__media {
   margin-bottom: $padding;
+  position: relative;
 }
 .project__copy {
   @extend %bodycopy;
   font-size: var(--ms--1);
   letter-spacing: 0.02em;
-  max-width: 38em;
+  max-width: 40em;
 }
 .gallery__item {
   margin-right: 1px;
@@ -35,19 +39,33 @@
 }
 
 .home__cv {
+  margin-bottom: 0.9em;
+  @include bp(m) {
+    margin-bottom: 0;
+  }
   ol {
+    @include bp(m){
+      margin-bottom: 1.5em;
+    }
   }
   li {
     display: flex;
   }
   h3 {
-      text-indent: 6.5em;
+    @include bp(m) {
+      text-indent: 7em;
+    }
   }
   .years {
-      width: 6em;
-      font-style: normal;
+    flex-basis: 6.5em;
+    flex-shrink: 0;
+    border: 1px solid red;
+    @include bp(m) {
       text-align: right;
-      margin-right: .5em;
-      font-feature-settings: "tnum" 1;
+      width: 6.5em;
+    }
+    font-style: normal;
+    margin-right: 0.5em;
+    font-feature-settings: "tnum" 1;
   }
 }

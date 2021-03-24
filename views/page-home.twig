@@ -11,17 +11,18 @@
 {% for p in projects %}
 <article class="project">
     <section class="project__media">
-        <ul class="gallery">
+        <ul class="gallery" tabindex="0">
             {% for item in p.meta("gallery")%}
             <li class="gallery__item">
                 {% if item.type == "video" %}
-                    <video class="media" src="{{item.url}}" autoplay muted loop playsinline></video>
+                <video class="media" src="{{item.url}}" autoplay muted loop playsinline></video>
                 {% else %}
-                    {% include "partial/picture.twig" with {image: TimberImage(item.ID)} %}
+                {% include "partial/picture.twig" with {image: TimberImage(item.ID)} %}
                 {% endif %}
             </li>
             {% endfor %}
         </ul>
+        <span class="gallery__index"></span>
     </section>
     <section class="project__copy">
         {{p.content}}

@@ -3,19 +3,25 @@
   font-size: var(--ms-0);
   margin-bottom: $padding;
   padding-bottom: $padding;
-  border-bottom: $borderWidth solid black;
-  border-image: $dashBorder;
+  border-bottom: 2px dashed black;
+  @include bp(s) {
+    border-bottom: $borderWidth dashed black;
+    border-image: $dashBorder;
+  }
 }
 .header__copy {
   max-width: 38em;
 }
 .footer {
   @extend %bodycopy;
-  border-top: $borderWidth solid black;
-  border-image: $dashBorder;
+  border-top: 2px dashed black;
+  @include bp(s) {
+    border-top: $borderWidth dashed black;
+    border-image: $dashBorder;
+  }
   font-size: var(--ms--1);
   display: flex;
-  margin-top: calc(#{$padding} - 3px);
-  padding-top: $padding;
+  margin-top: calc(#{$padding});
+  padding-top: calc(#{$padding} - #{$borderWidth});
   justify-content: space-between;
 }

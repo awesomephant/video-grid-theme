@@ -1,0 +1,33 @@
+.gallery {
+  position: relative;
+  .ready & {
+    cursor: ew-resize;
+  }
+}
+.gallery__item {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  pointer-events: none;
+  width: 100%;
+  &.current {
+    opacity: 1;
+    pointer-events: all;
+  }
+  &:first-of-type {
+    position: static;
+  }
+}
+
+.gallery__index {
+  position: absolute;
+  right: 0;
+  bottom: calc(#{$padding} * -2);
+  font-family: $sans;
+  font-size: var(--ms--1);
+  letter-spacing: .1em;
+  display: none;
+  @include bp(m){
+    display: block;
+  }
+}
