@@ -10,8 +10,8 @@
 {% block content %}
 {% for p in projects %}
 <article class="project">
-    <section class="project__gallery">
-        <ul>
+    <section class="project__media">
+        <ul class="gallery">
             {% for item in p.meta("gallery")%}
             <li class="gallery__item">
                 {% if item.type == "video" %}

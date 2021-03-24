@@ -3,7 +3,7 @@
   font-size: var(--ms-0);
   margin-bottom: $padding;
   padding-bottom: $padding;
-  border-bottom: 3px solid black;
+  border-bottom: $borderWidth solid black;
   border-image: $dashBorder;
 }
 .header__copy {
@@ -11,7 +11,7 @@
 }
 .footer {
   @extend %bodycopy;
-  border-top: 3px solid black;
+  border-top: $borderWidth solid black;
   border-image: $dashBorder;
   font-size: var(--ms--1);
   display: flex;

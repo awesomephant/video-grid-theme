@@ -9,15 +9,12 @@
 .project {
   padding-bottom: $padding;
   margin-bottom: calc(#{$padding} * 1.2); // Compensation for type spacing
-  border-bottom: 3px solid $black;
+  border-bottom: $borderWidth solid $black;
   border-image: $dashBorder;
 }
 
-.project__gallery {
+.project__media {
   margin-bottom: $padding;
-  ul {
-    display: flex;
-  }
 }
 .project__copy {
   @extend %bodycopy;
@@ -39,7 +36,6 @@
 
 .home__cv {
   ol {
-    margin-bottom: 1.8em;
   }
   li {
     display: flex;

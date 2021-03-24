@@ -39,7 +39,8 @@ $lightgray: rgb(220, 220, 220);
 $black: rgb(14, 14, 14);
 $sans: "neue-haas-unica", sans-serif;
 $padding: var(--ms-0);
-$dashBorder: repeating-linear-gradient(to right, black 0, black 1em, transparent 1em, transparent 1.55em) 100;
+$borderWidth: 2px;
+$dashBorder: repeating-linear-gradient(to right, black 0, black .85em, transparent .85em, transparent 1.25em) 100;
 
 :root {
   --ratio: 1.2;
