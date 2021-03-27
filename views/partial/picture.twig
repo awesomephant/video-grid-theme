@@ -1,5 +1,4 @@
-
 <picture>
-    <source srcset="{{image.src | resize(1500) | towebp}}" type="image/webp">
-    <img class="media" loading="lazy" src="{{image.src | resize(1500)}}" alt="" />
+    <source srcset="{{image.src | towebp}}" type="image/webp">
+    <img class="media" loading="lazy" src="{{image.src}}" alt="" />
 </picture>
