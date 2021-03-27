@@ -6,6 +6,10 @@ function initSlider(container) {
     nextSlide: 0,
     prevSlide: 0,
   };
+  if (slides.length === 0) {
+    return;
+  }
+
   if (slides.length === 1) {
     slides[state.currentSlide].classList.add("current");
     return;

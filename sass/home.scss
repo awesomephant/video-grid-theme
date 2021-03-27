@@ -45,7 +45,7 @@
   }
   ol {
     @include bp(m){
-      margin-bottom: 1.5em;
+      margin-bottom: .65em;
     }
   }
   li {
@@ -59,7 +59,6 @@
   .years {
     flex-basis: 6.5em;
     flex-shrink: 0;
-    border: 1px solid red;
     @include bp(m) {
       text-align: right;
       width: 6.5em;
