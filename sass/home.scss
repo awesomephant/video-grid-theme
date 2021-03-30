@@ -7,13 +7,14 @@
 }
 
 .project {
+  @extend %dashBorder;
   padding-bottom: $padding;
   margin-bottom: calc(#{$padding} * 1.2); // Compensation for type spacing
-  border-bottom: 2px dashed black;
-  @include bp(s) {
-    border-bottom: $borderWidth dashed black;
-    border-image: $dashBorder;
+  position: relative;
+  &:after {
+    bottom: 0;
   }
+
 }
 
 .project__media {
@@ -44,8 +45,8 @@
     margin-bottom: 0;
   }
   ol {
-    @include bp(m){
-      margin-bottom: .65em;
+    @include bp(m) {
+      margin-bottom: 0.65em;
     }
   }
   li {

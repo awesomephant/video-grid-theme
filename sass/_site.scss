@@ -1,27 +1,27 @@
 .header {
   @extend %bodycopy;
+  @extend %dashBorder;
   font-size: var(--ms-0);
   margin-bottom: $padding;
   padding-bottom: $padding;
-  border-bottom: 2px dashed black;
-  @include bp(s) {
-    border-bottom: $borderWidth dashed black;
-    border-image: $dashBorder;
+  position: relative;
+  &:after {
+    bottom: 0;
   }
 }
 .header__copy {
   max-width: 38em;
 }
 .footer {
+  @extend %dashBorder;
   @extend %bodycopy;
-  border-top: 2px dashed black;
-  @include bp(s) {
-    border-top: $borderWidth dashed black;
-    border-image: $dashBorder;
-  }
   font-size: var(--ms--1);
   display: flex;
   margin-top: calc(#{$padding});
   padding-top: calc(#{$padding} - #{$borderWidth});
   justify-content: space-between;
+  position: relative;
+  &:after {
+    top: 0;
+  }
 }

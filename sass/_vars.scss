@@ -4,7 +4,7 @@
       @content;
     }
   } @else if $point==l {
-    @media (min-width: 1400px) {
+    @media (min-width: 1200px) {
       @content;
     }
   } @else if $point==m {
@@ -27,6 +27,25 @@
   background-size: 100vw calc(#{$lineHeight} * 2);
   background-repeat: repeat;
   background-position: 0 $offset;
+}
+%dashBorder {
+  &:after {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 1px;
+    @include bp(l) {
+      height: 2px;
+    }
+    background-image: repeating-linear-gradient(
+      to right,
+      black 0,
+      black calc(var(--ms-0) * 0.85),
+      transparent calc(var(--ms-0) * 0.85),
+      transparent calc(var(--ms-0) * 1.5)
+    );
+    width: 100%;
+  }
 }
 
 $fast: 100ms;
@@ -61,6 +80,12 @@ $dashBorder: repeating-linear-gradient(
   hyphens: auto;
   @include bp(m) {
     hyphens: none;
+  }
+  p {
+    margin-bottom: .6em;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
   h1,
   h3 {
